@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	--background: #ffffff;
+	--foreground: #171717;
+	--bg-color: rgba(128, 128, 128, 0.1);
+	--grid-size: 30px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+	width: 10px;
+	position: absolute;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgba(114, 113, 114, 0.24);
+}
+
+body::before {
+	position: absolute;
+	content: "";
+	left: -50%;
+	top: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+	background-size: var(--grid-size) var(--grid-size);
+	background-image: linear-gradient(
+			to right,
+			var(--bg-color) 1px,
+			transparent 1px
+		),
+		linear-gradient(to bottom, var(--bg-color) 1px, transparent 1px);
+
+	transform: rotate(45deg);
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	border-radius: 999999px;
+	box-shadow: 0px 0px 600px var(--background);
+	width: 70%;
+	height: 70%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	background: var(--background);
 }
