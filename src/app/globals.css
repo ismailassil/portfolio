@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
 	--bg-color: rgba(128, 128, 128, 0.1);
 	--grid-size: 30px;
+}
+
+@theme {
+	--color-primary: #0554f2;
+	--color-blog-card: #008080;
 }
 
 body {
@@ -18,15 +27,6 @@ body {
 	overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-	width: 10px;
-	position: absolute;
-}
-
-body::-webkit-scrollbar-thumb {
-	background: rgba(114, 113, 114, 0.24);
-}
-
 body::before {
 	position: absolute;
 	content: "";
@@ -36,14 +36,23 @@ body::before {
 	height: 200%;
 	z-index: -1;
 	background-size: var(--grid-size) var(--grid-size);
-	background-image: linear-gradient(
+	/* background-image: linear-gradient(
 			to right,
 			var(--bg-color) 1px,
 			transparent 1px
 		),
-		linear-gradient(to bottom, var(--bg-color) 1px, transparent 1px);
+		linear-gradient(to bottom, var(--bg-color) 1px, transparent 1px); */
 
 	transform: rotate(45deg);
+}
+
+body::-webkit-scrollbar {
+	width: 10px;
+	position: absolute;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgba(114, 113, 114, 0.24);
 }
 
 body::after {
@@ -58,4 +67,83 @@ body::after {
 	transform: translate(-50%, -50%);
 	z-index: -1;
 	background: var(--background);
+}
+
+.zigzag {
+	display: inline-block;
+	position: relative;
+	background: url(http://i.imgur.com/HlfA2is.gif) bottom repeat-x;
+}
+
+.cUnderline {
+	display: inline-block;
+	position: relative;
+}
+
+.cUnderline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 2;
+	left: 0;
+	background: oklch(70.5% 0.213 47.604);
+	transform-origin: bottom left;
+	transition: transform 0.25s ease-in-out;
+}
+
+.cUnderline:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom right;
+}
+
+.ccUnderline {
+	display: inline-block;
+	position: relative;
+}
+
+.ccUnderline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 2;
+	left: 0;
+	background: rgb(88, 88, 226);
+	transform-origin: bottom center;
+	transition: transform 0.25s ease-in-out;
+}
+
+.ccUnderline:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom;
+}
+
+.mUnderline {
+	display: inline-block;
+	position: relative;
+}
+
+.mUnderline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 5;
+	left: 0;
+	background: rgb(252, 72, 56);
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-in-out;
+}
+
+.mUnderline:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+.animate-spinner {
+	animation: spin 10s linear infinite;
 }

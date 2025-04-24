@@ -4,7 +4,7 @@ import "./globals.css";
 import dmSans from "./fonts/geistSans";
 import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 // export const metadata: Metadata = {
 // 	title: "iassil",
@@ -44,8 +44,29 @@ export default function RootLayout({
 			</head>
 			<body className={`${dmSans.className} antialiased`}>
 				{children}
-				<AnimatePresence initial={false}>
-					{showNav ? <NavBar key="nav" /> : null}
+				<AnimatePresence initial={false} mode="wait">
+					{showNav ? (
+						<motion.div
+							key="nav-wrapper"
+							initial={{
+								opacity: 0,
+								y: 100,
+								scale: 0.5,
+								rotate: 15,
+							}}
+							animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+							exit={{
+								opacity: 0,
+								y: 100,
+								scale: 0.5,
+								rotate: 15,
+							}}
+							transition={{ type: "spring", duration: 0.5 }}
+							className="fixed bottom-5 left-1/2 -translate-x-1/2"
+						>
+							<NavBar key="nav" />
+						</motion.div>
+					) : null}
 				</AnimatePresence>
 			</body>
 		</html>

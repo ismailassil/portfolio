@@ -3,7 +3,7 @@ import Tooltip from "../Tooltip";
 
 function About({ style }: { style: string }) {
 	return (
-		<div className={style}>
+		<div className={style} onClick={() => window.location.href="#AboutMe"}>
 			<Tooltip label="About Me" />
 			<User size={32} className="block group-hover:hidden" />
 			<User
