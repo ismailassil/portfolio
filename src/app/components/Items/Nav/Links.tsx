@@ -6,14 +6,24 @@ import {
 	LinkedinLogo,
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "motion/react";
-import { RefObject } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 
 type LinksProps = {
 	links: boolean;
 	linksRef: RefObject<HTMLDivElement | null>;
+	setLinks: Dispatch<SetStateAction<boolean>>;
 };
 
-function Links({ links, linksRef }: LinksProps) {
+function Links({ links, linksRef, setLinks }: LinksProps) {
+	function redirect(path: string) {
+		window.open(path, "_blank");
+	}
+
+	function handleEmail() {
+		window.location.href =
+			"mailto:ismailassil@duck.com?subject=Hello&body=How%20are%20you%3F";
+	}
+
 	return (
 		<AnimatePresence initial={false} mode="wait">
 			{links && (
@@ -27,8 +37,12 @@ function Links({ links, linksRef }: LinksProps) {
 						bg-black/55 backdrop-blur-xs rounded-md *:px-2 *:py-1.5
 						*:duration-300 *:transition-all grid grid-cols-2 w-full min-w-80
 						text-white p-3 gap-2 *:cursor-pointer *:hover:bg-black/10 *:rounded-md"
+					onClick={() => setLinks(false)}
 				>
-					<button className="flex gap-2 items-center text-sm justify-between min-w-37 group">
+					<button
+						className="flex gap-2 items-center text-sm justify-between min-w-37 group"
+						onClick={handleEmail}
+					>
 						<div className="flex gap-2 items-center">
 							<At size={24} color="white" /> Email{" "}
 						</div>
@@ -37,7 +51,12 @@ function Links({ links, linksRef }: LinksProps) {
 							className="group-hover:block hidden"
 						/>
 					</button>
-					<button className="flex gap-2 items-center text-sm justify-between min-w-37 group">
+					<button
+						className="flex gap-2 items-center text-sm justify-between min-w-37 group"
+						onClick={() =>
+							redirect("https://github.com/ismailassil/")
+						}
+					>
 						<div className="flex gap-2 items-center">
 							<GithubLogo size={24} color="white" /> Github{" "}
 						</div>
@@ -46,7 +65,14 @@ function Links({ links, linksRef }: LinksProps) {
 							className="group-hover:block hidden"
 						/>
 					</button>
-					<button className="flex gap-2 items-center text-sm justify-between group min-w-37">
+					<button
+						className="flex gap-2 items-center text-sm justify-between group min-w-37"
+						onClick={() =>
+							redirect(
+								"https://www.linkedin.com/in/ismail-assil/"
+							)
+						}
+					>
 						<div className="flex gap-2 items-center">
 							<LinkedinLogo size={24} color="white" />{" "}
 							Linkedin{" "}
@@ -56,7 +82,12 @@ function Links({ links, linksRef }: LinksProps) {
 							className="group-hover:block hidden"
 						/>
 					</button>
-					<button className="flex gap-2 items-center text-sm justify-between group min-w-37">
+					<button
+						className="flex gap-2 items-center text-sm justify-between group min-w-37"
+						onClick={() =>
+							redirect("https://discord.com/users/musablade")
+						}
+					>
 						<div className="flex gap-2 items-center">
 							<DiscordLogo size={24} color="white" /> Discord{" "}
 						</div>

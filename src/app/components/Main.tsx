@@ -1,13 +1,35 @@
-import About from "./Items/About";
-import Blogs from "./Items/Blogs";
-import Projects from "./Items/Projects";
-import Skills from "./Items/Skills";
+import { Code, Folder, Notepad, User } from "@phosphor-icons/react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Image from "next/image";
+import Button from "./Items/About";
+import { motion } from "framer-motion";
 
 function Main() {
-	const style = `relative group w-fit cursor-pointer ring-2 px-7 py-3 rounded-sm
-			hover:-translate-y-2 duration-600 transition-all`;
+	const text = "Hello, I’m Ismail";
+	const characters = text.split("");
+
+	const buttons = [
+		{
+			tooltip: "About Me",
+			href: "#aboutme",
+			Icon: User,
+		},
+		{
+			tooltip: "Skills",
+			href: "#skills",
+			Icon: Code,
+		},
+		{
+			tooltip: "Projects",
+			href: "#projects",
+			Icon: Folder,
+		},
+		{
+			tooltip: "Blogs",
+			href: "#blogs",
+			Icon: Notepad,
+		},
+	];
 
 	return (
 		<main
@@ -17,17 +39,47 @@ function Main() {
 			<ThemeSwitcher />
 
 			<article className="flex flex-col items-center justify-center gap-5">
-				<h1 className="text-5xl font-black">Hello, I&rsquo;m Ismail</h1>
+				<div className="flex gap-1 relative">
+					<motion.h1 className="text-5xl font-black">
+						{characters.map((ch, i) => (
+							<motion.span
+								key={i}
+								initial={{ opacity: 0, x: -10 }}
+								animate={{ opacity: 1, x: 0 }}
+								transition={{
+									delay: i * 0.1,
+									duration: 0.1,
+								}}
+							>
+								{ch}
+							</motion.span>
+						))}
+					</motion.h1>
+					<motion.div
+						animate={{ opacity: [1, 0, 1] }}
+						transition={{
+							duration: 0.75,
+							repeat: Infinity,
+							repeatType: "loop",
+							ease: "ease-in-out",
+						}}
+						className="absolute bottom-0 -right-2 w-1 h-full bg-black"
+					/>
+				</div>
 				<p className="text-lg font-light w-full max-w-[60%] text-center">
 					Software Engineering Student passionate about creating
 					real-world solutions
 				</p>
 			</article>
 			<section className="flex gap-4">
-				<About style={style} />
-				<Skills style={style} />
-				<Projects style={style} />
-				<Blogs style={style} />
+				{buttons.map((ref, i) => (
+					<Button
+						key={i}
+						tooltip={ref.tooltip}
+						href={ref.href}
+						Icon={ref.Icon}
+					/>
+				))}
 			</section>
 			<Image
 				src="/scrollDown.gif"
@@ -36,7 +88,7 @@ function Main() {
 				alt="Scroll Down Animation"
 				className="absolute bottom-10 cursor-pointer"
 				unoptimized
-				onClick={() => (window.location.href = "#AboutMe")}
+				onClick={() => (window.location.href = "#aboutme")}
 			/>
 		</main>
 	);

@@ -19,7 +19,7 @@ function NuggetsOfKnowHow() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="pt-20 relative" id="SkillSet">
+			<motion.article className="pt-20 relative" id="skills">
 				<div
 					className="relative"
 					onMouseEnter={() => setIsHovered(true)}
@@ -29,7 +29,7 @@ function NuggetsOfKnowHow() {
 						animate={{ x: isHovered ? 50 : 0 }}
 						transition={{ type: "spring", stiffness: 300 }}
 						className="relative text-3xl font-bold zigzag hover:line-through
-								hover:text-[#FF2200] cursor-pointer select-none z-1"
+								hover:text-[#FF2200] cursor-pointer select-none"
 					>
 						Nuggets of Know-How
 					</motion.h1>

@@ -9,7 +9,7 @@ function MyDevSpace() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="mt-20 relative" id="SkillSet">
+			<motion.article className="mt-20 relative" id="skills">
 				<div
 					className="relative"
 					onMouseEnter={() => setIsHovered(true)}
@@ -19,7 +19,7 @@ function MyDevSpace() {
 						animate={{ x: isHovered ? 50 : 0 }}
 						transition={{ type: "spring", stiffness: 300 }}
 						className="relative text-3xl font-bold zigzag hover:line-through
-								hover:text-[#00676B] cursor-pointer select-none z-1"
+								hover:text-[#00676B] cursor-pointer select-none"
 					>
 						My DevSpace
 					</motion.h1>

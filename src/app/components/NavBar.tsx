@@ -125,7 +125,7 @@ function NavBar() {
 				setTooltip={setTooltip}
 				setOptions={setOptions}
 			/>
-			<Links links={links} linksRef={linksRef} />
+			<Links links={links} linksRef={linksRef} setLinks={setLinks} />
 		</>
 	);
 }

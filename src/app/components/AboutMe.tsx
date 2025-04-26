@@ -16,7 +16,7 @@ function AboutMe() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="mt-20 pt-20 relative" id="AboutMe">
+			<motion.article className="mt-20 pt-20 relative" id="aboutme">
 				<div
 					className="relative"
 					onMouseEnter={() => setIsHovered(true)}

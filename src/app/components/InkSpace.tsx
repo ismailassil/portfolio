@@ -9,7 +9,7 @@ function InkSpace() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="mt-20 relative" id="SkillSet">
+			<motion.article className="pt-20 relative" id="blogs">
 				<div className="flex justify-between">
 					<div
 						className="relative"
@@ -20,7 +20,7 @@ function InkSpace() {
 							animate={{ x: isHovered ? 50 : 0 }}
 							transition={{ type: "spring", stiffness: 300 }}
 							className="text-3xl font-bold zigzag hover:line-through
-						hover:text-[#c99785] cursor-pointer select-none z-1"
+						hover:text-[#c99785] cursor-pointer select-none"
 						>
 							InkSpace
 						</motion.h1>
@@ -42,7 +42,7 @@ function InkSpace() {
 					</div>
 					<motion.p
 						className="hover:underline text-gray-400
-							items-center text-md cursor-pointer select-none z-1 flex gap-2 flex-nowrap"
+							items-center text-md cursor-pointer select-none flex gap-2 flex-nowrap"
 					>
 						View all Blogs <ArrowRight size={12} />
 					</motion.p>

@@ -42,7 +42,7 @@ function LatestProjects() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="relative mt-20" id="SkillSet">
+			<motion.article className="relative pt-20" id="projects">
 				<div className="flex justify-between">
 					<div
 						className="relative"
@@ -52,7 +52,7 @@ function LatestProjects() {
 						<motion.h1
 							animate={{ x: isHovered ? 50 : 0 }}
 							transition={{ type: "spring", stiffness: 300 }}
-							className="zigzag z-1 cursor-pointer text-3xl font-bold select-none hover:text-[#736C12] hover:line-through"
+							className="zigzag cursor-pointer text-3xl font-bold select-none hover:text-[#736C12] hover:line-through"
 						>
 							Latest Projects
 						</motion.h1>
@@ -68,7 +68,7 @@ function LatestProjects() {
 							<Lego size={38} weight="duotone" color="#736C12" />
 						</motion.div>
 					</div>
-					<motion.p className="text-md z-1 flex cursor-pointer flex-nowrap items-center gap-2 text-gray-400 select-none hover:underline">
+					<motion.p className="text-md flex cursor-pointer flex-nowrap items-center gap-2 text-gray-400 select-none hover:underline">
 						View all Projects <ArrowRight size={12} />
 					</motion.p>
 				</div>
