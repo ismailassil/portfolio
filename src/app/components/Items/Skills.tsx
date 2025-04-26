@@ -1,5 +1,5 @@
 import { Code } from "@phosphor-icons/react";
-import Tooltip from "../Tooltip";
+import Tooltip from "./Tooltip";
 
 function Skills({ style }: { style: string }) {
 	return (

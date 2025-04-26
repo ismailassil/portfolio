@@ -21,29 +21,22 @@ body {
 	color: var(--foreground);
 	font-family: Arial, Helvetica, sans-serif;
 	position: relative;
-	min-height: 100vh;
-	margin: 0;
-	padding: 0;
 	overflow-x: hidden;
 }
 
-body::before {
-	position: absolute;
+.grid-wrapper::before {
 	content: "";
-	left: -50%;
+	position: absolute;
 	top: -50%;
-	width: 200%;
-	height: 200%;
-	z-index: -1;
+	left: -50%;
+	width: 150%;
+	height: 150%;
 	background-size: var(--grid-size) var(--grid-size);
-	/* background-image: linear-gradient(
-			to right,
-			var(--bg-color) 1px,
-			transparent 1px
-		),
-		linear-gradient(to bottom, var(--bg-color) 1px, transparent 1px); */
-
+	background-image:
+		linear-gradient(to right, var(--bg-color) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--bg-color) 1px, transparent 1px);
 	transform: rotate(45deg);
+	z-index: -1;
 }
 
 body::-webkit-scrollbar {
@@ -146,4 +139,14 @@ body::after {
 
 .animate-spinner {
 	animation: spin 10s linear infinite;
+}
+
+.hide-scroll {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.hide-scroll::-webkit-scrollbar,
+.hide-scroll::-webkit-scrollbar-button {
+	display: none;
 }

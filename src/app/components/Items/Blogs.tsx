@@ -1,5 +1,5 @@
 import { Notepad } from "@phosphor-icons/react";
-import Tooltip from "../Tooltip";
+import Tooltip from "./Tooltip";
 
 function Blogs({ style }: { style: string }) {
 	return (

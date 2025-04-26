@@ -43,6 +43,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`${dmSans.className} antialiased`}>
+				<div className="grid-wrapper" />
 				{children}
 				<AnimatePresence initial={false} mode="wait">
 					{showNav ? (

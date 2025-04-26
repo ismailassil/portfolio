@@ -16,9 +16,9 @@ function AboutMe() {
 
 	return (
 		<AnimatePresence>
-			<motion.section className="mt-20 pt-20 relative" id="AboutMe">
+			<motion.article className="mt-20 pt-20 relative" id="AboutMe">
 				<div
-					className="relative inline-block"
+					className="relative"
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}
 				>
@@ -98,7 +98,7 @@ function AboutMe() {
 						className="inline-block rotate-12"
 					/>
 				</p>
-			</motion.section>
+			</motion.article>
 		</AnimatePresence>
 	);
 }

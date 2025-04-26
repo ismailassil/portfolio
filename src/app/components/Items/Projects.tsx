@@ -1,5 +1,5 @@
 import { Folder, FolderOpen } from "@phosphor-icons/react";
-import Tooltip from "../Tooltip";
+import Tooltip from "./Tooltip";
 
 function Projects({ style }: { style: string }) {
 	return (

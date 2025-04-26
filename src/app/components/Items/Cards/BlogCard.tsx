@@ -3,11 +3,16 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { useState } from "react";
 
 function BlogCard({ title, img }: { title: string; img: string }) {
+	const [isHover, setIsHover] = useState(false);
+
 	return (
 		<AnimatePresence>
 			<motion.div
+				onMouseEnter={() => setIsHover(true)}
+				onMouseLeave={() => setIsHover(false)}
 				whileHover={{
 					scale: 1.03,
 					rotate: 1,
@@ -23,7 +28,8 @@ function BlogCard({ title, img }: { title: string; img: string }) {
 					damping: 10,
 				}}
 				className="w-full select-none overflow-hidden
-								cursor-pointer bg-gray-100 ring-gray-200 hover:ring-[#9c7a6e43]
+								cursor-pointer bg-gray-50 ring-gray-200
+								hover:ring-[#9c7a6e43] hover:shadow-md
 								group ring-2 p-2 rounded-xl"
 			>
 				<div
@@ -37,9 +43,12 @@ function BlogCard({ title, img }: { title: string; img: string }) {
 						height={100}
 						alt="Blog Image"
 						className="object-cover"
+						style={
+							{ WebkitUserDrag: "none" } as React.CSSProperties
+						}
 					/>
 				</div>
-				<p
+				<div
 					className="p-4 text-lg font-bold flex gap-2 items-center
 								w-full justify-between"
 				>
@@ -53,12 +62,22 @@ function BlogCard({ title, img }: { title: string; img: string }) {
 									transition-all duration-500 h-0.5 bg-blog-card"
 						/>
 					</span>
-					<ArrowUpRight
-						size={20}
-						weight="fill"
-						className="group-hover:fill-blog-card duration-500"
-					/>
-				</p>
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={isHover ? "duotone" : "regular"}
+							initial={{ opacity: 0, y: -4 }}
+							animate={{ opacity: 1, y: 0 }}
+							exit={{ opacity: 0, y: 4 }}
+							transition={{ duration: 0.15 }}
+						>
+							<ArrowUpRight
+								size={20}
+								weight={isHover ? "duotone" : "regular"}
+								color={isHover ? "#008080" : "black"}
+							/>
+						</motion.div>
+					</AnimatePresence>
+				</div>
 			</motion.div>
 		</AnimatePresence>
 	);

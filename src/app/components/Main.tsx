@@ -6,7 +6,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import Image from "next/image";
 
 function Main() {
-
 	const style = `relative group w-fit cursor-pointer ring-2 px-7 py-3 rounded-sm
 			hover:-translate-y-2 duration-600 transition-all`;
 
@@ -35,11 +34,12 @@ function Main() {
 				width={50}
 				height={90}
 				alt="Scroll Down Animation"
-				className="absolute bottom-10"
+				className="absolute bottom-10 cursor-pointer"
 				unoptimized
+				onClick={() => (window.location.href = "#AboutMe")}
 			/>
 		</main>
 	);
 }
 
-export default Main
+export default Main;

@@ -9,9 +9,9 @@ function MyDevSpace() {
 
 	return (
 		<AnimatePresence>
-			<motion.section className="mt-20 relative" id="SkillSet">
+			<motion.article className="mt-20 relative" id="SkillSet">
 				<div
-					className="relative inline-block"
+					className="relative"
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}
 				>
@@ -36,14 +36,14 @@ function MyDevSpace() {
 					</motion.div>
 				</div>
 				<AnimatePresence>
-					<motion.aside
+					<motion.section
 						className={`mt-10 text-justify text-gray-700 leading-loose grid grid-cols-3 gap-3`}
 					>
 						{techIcons.map((tech, index) => (
 							<motion.div
 								key={index}
 								whileHover={{ scale: 1.03, rotate: 2 }}
-								whileTap={{ scale: 0.95 }}
+								whileTap={{ scale: 0.95, rotate: 4 }}
 								className="flex gap-3 ring-2 ring-red-900/12 rounded-sm px-2 items-center h-12
 									cursor-pointer hover:ring-indigo-500/50 hover:bg-gray-100 bg-gray-50 select-none
 									hover:shadow-md
@@ -53,9 +53,9 @@ function MyDevSpace() {
 								<p>{tech.label}</p>
 							</motion.div>
 						))}
-					</motion.aside>
+					</motion.section>
 				</AnimatePresence>
-			</motion.section>
+			</motion.article>
 		</AnimatePresence>
 	);
 }
