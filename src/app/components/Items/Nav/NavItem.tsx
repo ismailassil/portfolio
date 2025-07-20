@@ -8,7 +8,12 @@ function NavItem({
 	label: string;
 }) {
 	return (
-		<div className="group relative flex items-center justify-center">
+		<div
+			className="group relative flex items-center justify-center"
+			onClick={() => {
+				if (label === 'Home') window.location.href = '/';
+			}}
+		>
 			{children}
 			{isTooltip && (
 				<div

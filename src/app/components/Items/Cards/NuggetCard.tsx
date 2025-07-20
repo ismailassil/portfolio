@@ -1,7 +1,7 @@
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
-import More from "./More";
-import { ArrowUp } from "@phosphor-icons/react";
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
+import More from './More';
+import { ArrowUp } from '@phosphor-icons/react';
 
 type NuggetProps = {
 	title: string;
@@ -24,8 +24,10 @@ function NuggetCard({ title, description, subtitle, skills }: NuggetProps) {
 				transition={{ duration: 0.4 }}
 				whileTap={{ scale: 0.99 }}
 				className="flex justify-between items-center ring-1 hover:ring-2
-									ring-gray-200 px-4 py-4 rounded-md cursor-pointer bg-gray-50 hover:ring-red-300 duration-200
-									select-none"
+							ring-gray-200 px-4 py-4 rounded-md cursor-pointer bg-gray-50
+							hover:ring-red-300 duration-200 dark:bg-black/20
+							dark:text-gray-200 dark:ring-1 dark:ring-white/10 
+							select-none"
 				onClick={() => {
 					setShow(!show);
 				}}
@@ -86,8 +88,8 @@ function NuggetCard({ title, description, subtitle, skills }: NuggetProps) {
 									<li
 										key={index}
 										className="flex items-start ring-1 ring-indigo-200 bg-indigo-100
-															hover:text-white hover:bg-indigo-500 px-2 rounded-sm select-none
-															duration-300 transition-all
+											hover:text-white hover:bg-indigo-500 px-2 rounded-sm select-none
+											duration-300 transition-all dark:text-dark dark:bg-white/90
 														"
 									>
 										{skill.title}

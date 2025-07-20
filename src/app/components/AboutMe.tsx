@@ -8,7 +8,10 @@ import spaceMono from '../fonts/spaceMono';
 function AboutMe() {
 	return (
 		<AnimatePresence>
-			<motion.article className="mt-20 pt-20 relative" id="aboutme">
+			<motion.article
+				className="mt-20 pt-20 relative dark:text-gray-200"
+				id="aboutme"
+			>
 				<div className="relative">
 					<motion.h1
 						className="text-2xl md:text-3xl font-bold
@@ -18,7 +21,8 @@ function AboutMe() {
 					</motion.h1>
 				</div>
 				<p
-					className={`mt-10 text-justify text-lg text-gray-700 leading-relaxing`}
+					className={`mt-10 text-justify text-lg
+						text-gray-700 leading-relaxing dark:text-gray-200`}
 				>
 					Hi, my name is <strong>Ismail Assil</strong>, an aspiring{' '}
 					<strong>

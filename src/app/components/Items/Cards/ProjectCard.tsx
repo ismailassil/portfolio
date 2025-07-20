@@ -36,13 +36,13 @@ function ProjectCard({ title, label, img, link }: ProjectCardProps) {
 					select-none overflow-hidden cursor-pointer
 					bg-gray-50 ring-gray-200 rounded-xl
 					ring-2 hover:ring-[#746e9c7a]
-					flex flex-col gap-2 p-4"
+					flex flex-col gap-2 p-4 dark:bg-dark dark:ring-white/10"
 				onClick={() => window.open(link)}
 			>
 				<div
 					className="hidden sm:visible sm:flex items-center border-3 border-gray-200
 								hover:border-[#746e9c7a] duration-500 justify-center
-								rounded-lg overflow-hidden md:h-[65%]"
+								rounded-lg overflow-hidden md:h-[65%] dark:border-white/10"
 				>
 					<Image
 						src={img}

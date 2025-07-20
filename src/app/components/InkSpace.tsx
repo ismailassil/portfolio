@@ -7,7 +7,7 @@ function InkSpace() {
 	return (
 		<AnimatePresence>
 			<motion.article className="pt-20 relative" id="blogs">
-				<div className="flex justify-between">
+				<div className="flex justify-between dark:text-gray-200">
 					<div className="relative">
 						<motion.h1
 							transition={{
@@ -23,6 +23,9 @@ function InkSpace() {
 					<motion.p
 						className="hover:underline text-gray-400
 							items-center text-md cursor-pointer select-none flex gap-2 flex-nowrap text-sm md:text-base"
+						onClick={() =>
+							window.open('https://medium.com/@ismailassil')
+						}
 					>
 						View all Blogs <ArrowRight size={12} />
 					</motion.p>
@@ -32,7 +35,7 @@ function InkSpace() {
 						title="RayCasting in C"
 						img="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*bc5ouuXDw6ZkOvbGKSLvqw.png"
 						link="https://medium.com/@ismailassil/ray-casting-c-8bfae2c2fc13"
-						/>
+					/>
 					<BlogCard
 						title="Networking"
 						img="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ZX1fzJq6cH1neKUT"

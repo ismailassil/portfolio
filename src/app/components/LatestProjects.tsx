@@ -43,7 +43,7 @@ function LatestProjects() {
 
 	return (
 		<AnimatePresence>
-			<motion.article className="relative pt-20" id="projects">
+			<motion.article className="relative pt-20 dark:text-gray-200" id="projects">
 				<div className="flex justify-between">
 					<div className="relative">
 						<motion.h1
@@ -60,6 +60,7 @@ function LatestProjects() {
 					<motion.p
 						className="text-md flex cursor-pointer flex-nowrap text-sm md:text-base
 							items-center gap-2 text-gray-400 select-none hover:underline"
+						onClick={() => window.open("https://github.com/ismailassil?tab=repositories")}
 					>
 						View all Projects <ArrowRight size={12} />
 					</motion.p>

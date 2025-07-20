@@ -1,6 +1,6 @@
-import Tooltip from "./Tooltip";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import Tooltip from './Tooltip';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 type ButtonsProps = {
 	tooltip: string;
@@ -18,13 +18,14 @@ function Button({ tooltip, href, Icon }: ButtonsProps) {
 				onMouseLeave={() => setIsHover(false)}
 				whileHover={{ scale: 1.09, rotate: -1 }}
 				transition={{
-					type: "spring",
+					type: 'spring',
 					stiffness: 150,
 					damping: 10,
 				}}
 				whileTap={{ scale: 0.95 }}
-				className={`relative group w-fit cursor-pointer ring-2 px-7 py-3 rounded-sm duration-200
-					${isHover ? "ring-orange-400 shadow-md z-10" : ""}`}
+				className={`relative group w-fit cursor-pointer ring-2 px-7 py-3 
+					rounded-sm duration-200 backdrop-blur-xs
+					${isHover && 'ring-orange-400 shadow-md z-10 hover:fill-oklch-light'}`}
 				onClick={() => (window.location.href = href)}
 			>
 				<AnimatePresence mode="wait">
@@ -37,20 +38,24 @@ function Button({ tooltip, href, Icon }: ButtonsProps) {
 							rotate: isHover ? 2 : 0,
 						}}
 						transition={{
-							type: "spring",
+							type: 'spring',
 							stiffness: 200,
 							damping: 14,
 						}}
 					>
 						<Icon
 							size={32}
-							className={`duration-200`}
-							color={isHover ? "oklch(75% 0.183 55.934)" : ""}
-							weight={isHover ? "duotone" : "regular"}
+							className={`duration-200 
+								${
+									isHover
+										? 'fill-oklch-light dark:fill-oklch-light'
+										: 'fill-gray-700 dark:fill-gray-200'
+								}
+							  `}
+							weight={isHover ? 'duotone' : 'regular'}
 						/>
 					</motion.div>
 				</AnimatePresence>
-				{/* Button */}
 			</motion.div>
 		</AnimatePresence>
 	);

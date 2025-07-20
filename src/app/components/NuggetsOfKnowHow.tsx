@@ -15,7 +15,7 @@ import {
 function NuggetsOfKnowHow() {
 	return (
 		<AnimatePresence>
-			<motion.article className="pt-20 relative" id="skills">
+			<motion.article className="pt-20 relative dark:text-gray-200" id="skills">
 				<div className="relative">
 					<motion.h1
 						className="relative text-2xl md:text-3xl font-bold

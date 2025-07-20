@@ -36,13 +36,13 @@ function BlogCard({ title, img, link }: BlogCardProps) {
 				className="w-full select-none overflow-hidden
 								cursor-pointer bg-gray-50 ring-gray-200
 								hover:ring-[#9c7a6e43] hover:shadow-md
-								group ring-2 p-2 rounded-xl max-h-70"
+								group ring-2 p-2 rounded-xl max-h-70 dark:bg-dark dark:ring-white/10 dark:text-gray-200"
 				onClick={() => window.open(link)}
 			>
 				<div
 					className="hidden sm:visible sm:flex items-center border-3 border-gray-200
 								hover:border-[#9c7a6e7a] duration-500 justify-center
-								rounded-lg overflow-hidden"
+								rounded-lg overflow-hidden dark:border-white/10"
 				>
 					<Image
 						src={img}
@@ -78,7 +78,7 @@ function BlogCard({ title, img, link }: BlogCardProps) {
 							<ArrowUpRight
 								size={20}
 								weight={isHover ? 'duotone' : 'regular'}
-								color={isHover ? '#008080' : 'black'}
+								className={`${isHover ? 'fill-[#008080] dark:fill-white' : 'fill-black dark:fill-gray-400'}`}
 							/>
 						</motion.div>
 					</AnimatePresence>
