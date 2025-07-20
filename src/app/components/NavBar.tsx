@@ -17,7 +17,7 @@ import { usePathname } from "next/navigation";
 function NavBar() {
 	const pathname = usePathname();
 
-	const [tooltip, setTooltip] = useState(false);
+	const [tooltip, setTooltip] = useState(true);
 	const [options, setOptions] = useState(false);
 	const [links, setLinks] = useState(false);
 

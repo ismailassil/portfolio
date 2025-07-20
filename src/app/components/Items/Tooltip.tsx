@@ -8,7 +8,7 @@ function Tooltip({ label }: { label: string }) {
 			animate={{ opacity: 1, scale: 1, y: 0 }}
 			exit={{ opacity: 0, scale: 0.6, y: -4 }}
 			transition={{ duration: 0.2 }}
-			className="absolute rounded-sm -bottom-10
+			className="absolute rounded-sm -bottom-10 backdrop-blur-md
 				left-1/2 -translate-x-1/2 bg-black/2 px-3
 				ring-1 ring-black/10
 				py-1 text-nowrap text-xs"

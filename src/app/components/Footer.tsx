@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 function Footer() {
 	return (
-		<footer className="w-full mt-30 flex flex-col gap-5 items-center justify-center">
+		<footer className="w-full mt-25 mb-25 flex flex-col gap-5 items-center justify-center">
 			<div>
 				<Image
 					src="/signature.svg"
@@ -11,7 +11,7 @@ function Footer() {
 					alt="Signature"
 				/>
 			</div>
-			<p>2025 &#169; Ismail Assil</p>
+			<p>{new Date().getFullYear()} &#169; Ismail Assil</p>
 		</footer>
 	);
 }

@@ -24,7 +24,7 @@ function Button({ tooltip, href, Icon }: ButtonsProps) {
 				}}
 				whileTap={{ scale: 0.95 }}
 				className={`relative group w-fit cursor-pointer ring-2 px-7 py-3 rounded-sm duration-200
-					${isHover ? "ring-orange-400 shadow-md" : ""}`}
+					${isHover ? "ring-orange-400 shadow-md z-10" : ""}`}
 				onClick={() => (window.location.href = href)}
 			>
 				<AnimatePresence mode="wait">

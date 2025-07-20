@@ -1,8 +1,6 @@
-import { Graph } from "@phosphor-icons/react";
-import { AnimatePresence } from "motion/react";
-import { motion } from "motion/react";
-import { useState } from "react";
-import NuggetCard from "./Items/Cards/NuggetCard";
+import { AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import NuggetCard from './Items/Cards/NuggetCard';
 import {
 	SE_description,
 	SE_skills,
@@ -12,38 +10,19 @@ import {
 	UI_skills,
 	UI_subtitle,
 	UI_title,
-} from "../info/Nuggets";
+} from '../info/Nuggets';
 
 function NuggetsOfKnowHow() {
-	const [isHovered, setIsHovered] = useState(false);
-
 	return (
 		<AnimatePresence>
 			<motion.article className="pt-20 relative" id="skills">
-				<div
-					className="relative"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
-				>
+				<div className="relative">
 					<motion.h1
-						animate={{ x: isHovered ? 50 : 0 }}
-						transition={{ type: "spring", stiffness: 300 }}
-						className="relative text-3xl font-bold zigzag hover:line-through
-								hover:text-[#FF2200] cursor-pointer select-none"
+						className="relative text-2xl md:text-3xl font-bold
+								cursor-pointer select-none"
 					>
 						Nuggets of Know-How
 					</motion.h1>
-
-					<motion.div
-						animate={{
-							x: isHovered ? 0 : -30,
-							rotate: isHovered ? 12 : 45,
-							opacity: isHovered ? 1 : 0,
-						}}
-						className="absolute top-0 left-0"
-					>
-						<Graph size={38} weight="fill" color="#FF2200" />
-					</motion.div>
 				</div>
 				<AnimatePresence>
 					<section

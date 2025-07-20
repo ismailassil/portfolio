@@ -1,8 +1,7 @@
-import { ArrowRight, Lego } from "@phosphor-icons/react";
-import { AnimatePresence } from "motion/react";
-import { motion } from "motion/react";
-import { useState } from "react";
-import ProjectCard from "./Items/Cards/ProjectCard";
+import { ArrowRight } from '@phosphor-icons/react';
+import { AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import ProjectCard from './Items/Cards/ProjectCard';
 import {
 	cubDescription,
 	cubImg,
@@ -12,31 +11,33 @@ import {
 	ircImg,
 	minishellDescription,
 	minishellImg,
-} from "../info/Descriptions";
+} from '../info/Descriptions';
 
 function LatestProjects() {
-	const [isHovered, setIsHovered] = useState(false);
-
 	const projects = [
 		{
-			title: "IRC Server",
+			title: 'IRC Server',
 			label: ircDescription,
 			img: ircImg,
+			link: "https://github.com/ismailassil/ft_irc"
 		},
 		{
-			title: "Inception",
+			title: 'Inception',
 			label: inceptionDescription,
 			img: inceptionImg,
+			link: "https://github.com/ismailassil/inception"
 		},
 		{
-			title: "Minishell",
+			title: 'Minishell',
 			label: minishellDescription,
 			img: minishellImg,
+			link: "https://github.com/ismailassil/minishell"
 		},
 		{
-			title: "cub3D",
+			title: 'cub3D',
 			label: cubDescription,
 			img: cubImg,
+			link: "https://github.com/ismailassil/cub3d"
 		},
 	];
 
@@ -44,41 +45,36 @@ function LatestProjects() {
 		<AnimatePresence>
 			<motion.article className="relative pt-20" id="projects">
 				<div className="flex justify-between">
-					<div
-						className="relative"
-						onMouseEnter={() => setIsHovered(true)}
-						onMouseLeave={() => setIsHovered(false)}
-					>
+					<div className="relative">
 						<motion.h1
-							animate={{ x: isHovered ? 50 : 0 }}
-							transition={{ type: "spring", stiffness: 300 }}
-							className="zigzag cursor-pointer text-3xl font-bold select-none hover:text-[#736C12] hover:line-through"
+							transition={{
+								type: 'spring',
+								stiffness: 100,
+								damping: 10,
+							}}
+							className=" cursor-pointer text-2xl md:text-3xl font-bold select-none"
 						>
 							Latest Projects
 						</motion.h1>
-
-						<motion.div
-							animate={{
-								x: isHovered ? 0 : -30,
-								rotate: isHovered ? 12 : 45,
-								opacity: isHovered ? 1 : 0,
-							}}
-							className="absolute top-0 left-0"
-						>
-							<Lego size={38} weight="duotone" color="#736C12" />
-						</motion.div>
 					</div>
-					<motion.p className="text-md flex cursor-pointer flex-nowrap items-center gap-2 text-gray-400 select-none hover:underline">
+					<motion.p
+						className="text-md flex cursor-pointer flex-nowrap text-sm md:text-base
+							items-center gap-2 text-gray-400 select-none hover:underline"
+					>
 						View all Projects <ArrowRight size={12} />
 					</motion.p>
 				</div>
-				<motion.section className="mt-10 grid w-full grid-cols-2 gap-4 rounded-xl select-none">
+				<motion.section
+					className="mt-10 grid w-full grid-cols-1 sm:grid-cols-2 
+						gap-4 rounded-xl select-none"
+				>
 					{projects.map((pr, i) => (
 						<ProjectCard
 							key={i}
 							title={pr.title}
 							label={pr.label}
 							img={pr.img}
+							link={pr.link}
 						/>
 					))}
 				</motion.section>

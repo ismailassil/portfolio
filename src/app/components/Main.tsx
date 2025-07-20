@@ -1,32 +1,32 @@
-import { Code, Folder, Notepad, User } from "@phosphor-icons/react";
-import ThemeSwitcher from "./ThemeSwitcher";
-import Image from "next/image";
-import Button from "./Items/About";
-import { motion } from "framer-motion";
+import { Code, Folder, Notepad, User } from '@phosphor-icons/react';
+import ThemeSwitcher from './ThemeSwitcher';
+import Image from 'next/image';
+import Button from './Items/About';
+import { motion } from 'framer-motion';
 
 function Main() {
-	const text = "Hello, I’m Ismail";
-	const characters = text.split("");
+	const text = 'Hello, I’m Ismail';
+	const characters = text.split('');
 
 	const buttons = [
 		{
-			tooltip: "About Me",
-			href: "#aboutme",
+			tooltip: 'About Me',
+			href: '#aboutme',
 			Icon: User,
 		},
 		{
-			tooltip: "Skills",
-			href: "#skills",
+			tooltip: 'Skills',
+			href: '#skills',
 			Icon: Code,
 		},
 		{
-			tooltip: "Projects",
-			href: "#projects",
+			tooltip: 'Projects',
+			href: '#projects',
 			Icon: Folder,
 		},
 		{
-			tooltip: "Blogs",
-			href: "#blogs",
+			tooltip: 'Blogs',
+			href: '#blogs',
 			Icon: Notepad,
 		},
 	];
@@ -37,10 +37,13 @@ function Main() {
 					flex flex-col items-center justify-center gap-15"
 		>
 			<ThemeSwitcher />
-
+			<div className="grid-wrapper-top " />
+			<div className="grid-wrapper-center " />
+			<div className="grid-wrapper-bottom " />
+			{/* <div className="bg" /> */}
 			<article className="flex flex-col items-center justify-center gap-5">
 				<div className="flex gap-1 relative">
-					<motion.h1 className="text-5xl font-black">
+					<motion.h1 className="text-5xl font-black text-center">
 						{characters.map((ch, i) => (
 							<motion.span
 								key={i}
@@ -60,18 +63,18 @@ function Main() {
 						transition={{
 							duration: 0.75,
 							repeat: Infinity,
-							repeatType: "loop",
-							ease: "ease-in-out",
+							repeatType: 'loop',
+							ease: 'ease-in-out',
 						}}
 						className="absolute bottom-0 -right-2 w-1 h-full bg-black"
 					/>
 				</div>
 				<p className="text-lg font-light w-full max-w-[60%] text-center">
-					Software Engineering Student passionate about creating
-					real-world solutions
+					Software Engineering Student passionate about creating real-world
+					solutions
 				</p>
 			</article>
-			<section className="flex gap-4">
+			<section className="gap-4 grid grid-cols-2 sm:grid-cols-4">
 				{buttons.map((ref, i) => (
 					<Button
 						key={i}
@@ -88,7 +91,7 @@ function Main() {
 				alt="Scroll Down Animation"
 				className="absolute bottom-10 cursor-pointer"
 				unoptimized
-				onClick={() => (window.location.href = "#aboutme")}
+				onClick={() => (window.location.href = '#aboutme')}
 			/>
 		</main>
 	);

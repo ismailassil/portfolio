@@ -1,43 +1,23 @@
-import { Circuitry } from "@phosphor-icons/react";
-import { AnimatePresence } from "motion/react";
-import { motion } from "motion/react";
-import { useState } from "react";
-import techIcons from "../info/Tech";
+import { AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import techIcons from '../info/Tech';
 
 function MyDevSpace() {
-	const [isHovered, setIsHovered] = useState(false);
-
 	return (
 		<AnimatePresence>
 			<motion.article className="mt-20 relative" id="skills">
-				<div
-					className="relative"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
-				>
+				<div className="relative">
 					<motion.h1
-						animate={{ x: isHovered ? 50 : 0 }}
-						transition={{ type: "spring", stiffness: 300 }}
-						className="relative text-3xl font-bold zigzag hover:line-through
-								hover:text-[#00676B] cursor-pointer select-none"
+						transition={{ type: 'spring', stiffness: 100, damping: 10 }}
+						className="relative text-2xl md:text-3xl font-bold 
+							cursor-pointer select-none"
 					>
 						My DevSpace
 					</motion.h1>
-
-					<motion.div
-						animate={{
-							x: isHovered ? 0 : -30,
-							rotate: isHovered ? 12 : 45,
-							opacity: isHovered ? 1 : 0,
-						}}
-						className="absolute top-0 left-0"
-					>
-						<Circuitry size={38} weight="duotone" color="#00676B" />
-					</motion.div>
 				</div>
 				<AnimatePresence>
 					<motion.section
-						className={`mt-10 text-justify text-gray-700 leading-loose grid grid-cols-3 gap-3`}
+						className={`mt-10 text-justify text-gray-700 leading-5 grid grid-cols-2 sm:grid-cols-3 gap-3`}
 					>
 						{techIcons.map((tech, index) => (
 							<motion.div
@@ -46,7 +26,7 @@ function MyDevSpace() {
 								whileTap={{ scale: 0.95, rotate: 4 }}
 								className="flex gap-3 ring-2 ring-red-900/12 rounded-sm px-2 items-center h-12
 									cursor-pointer hover:ring-indigo-500/50 hover:bg-gray-100 bg-gray-50 select-none
-									hover:shadow-md
+									hover:shadow-md 
 									"
 							>
 								{tech.tag}
