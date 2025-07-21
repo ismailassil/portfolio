@@ -8,11 +8,6 @@ import { AnimatePresence, motion } from 'motion/react';
 import InteractiveDots from './components/InteractiveDots';
 import { ThemeProvider } from './context/ThemeContext';
 
-// export const metadata: Metadata = {
-// 	title: "iassil",
-// 	description: "My Portfolio",
-// };
-
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -36,6 +31,10 @@ export default function RootLayout({
 		};
 	});
 
+	useEffect(() => {
+		document.title = 'Portfolio | iassil';
+	});
+
 	return (
 		<html lang="en" className="dark">
 			<head>
@@ -43,6 +42,7 @@ export default function RootLayout({
 					rel="stylesheet"
 					href="https://cdn.jsdelivr.net/gh/dheereshagrwal/coloured-icons@master/src/app/ci.min.css"
 				/>
+				<link rel="icon" href="/favicon.svg" />
 			</head>
 			<body className={`${dmSans.className} antialiased`}>
 				<ThemeProvider>

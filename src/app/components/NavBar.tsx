@@ -113,12 +113,16 @@ function NavBar() {
 						onClick={() => setLinks(!links)}
 					/>
 				</NavItem>
-				<NavItem isTooltip={isTooltip} label={`${isDark ? "Light Theme" : "Dark Theme"}`}>
+				<NavItem
+					isTooltip={isTooltip}
+					label={`${isDark ? 'Light Theme' : 'Dark Theme'}`}
+				>
 					{isDark ? (
 						<Sun
 							size={25}
 							color={setColor('/theme')}
 							style={setStyle('/theme')}
+							className="animate-spinner-navbar"
 							onClick={toggleTheme}
 						/>
 					) : (

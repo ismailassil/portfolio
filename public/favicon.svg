@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for better PNG export -->
+  <circle cx="100" cy="100" r="95" fill="none"/>
+  
+  <!-- Orbital rings -->
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#e6a82d" stroke-width="3" opacity="0.8"/>
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#e6a82d" stroke-width="3" opacity="0.8" transform="rotate(60 100 100)"/>
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#e6a82d" stroke-width="3" opacity="0.8" transform="rotate(120 100 100)"/>
+  
+  <!-- Central nucleus -->
+  <circle cx="100" cy="100" r="8" fill="#2d5a3d"/>
+  
+  <!-- Electrons -->
+  <circle cx="170" cy="100" r="4" fill="#e6a82d"/>
+  <circle cx="135" cy="156" r="4" fill="#e6a82d"/>
+  <circle cx="65" cy="144" r="4" fill="#e6a82d"/>
+</svg>

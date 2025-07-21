@@ -122,6 +122,10 @@ body::-webkit-scrollbar-thumb {
 	animation: spin 10s linear infinite;
 }
 
+.animate-spinner-navbar {
+	animation: spin 40s linear infinite;
+}
+
 .hide-scroll {
 	scrollbar-width: none;
 	-ms-overflow-style: none;
