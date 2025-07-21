@@ -14,12 +14,16 @@ html {
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
-	--dot-color: #dddddd;
+	--dot-color: #d8d8d8;
 }
 
 [data-theme='dark'] {
-	--dot-color: #3c3c3c;
+	--dot-color: #373737;
 }
 
 @theme {

@@ -14,15 +14,22 @@ function AboutMe() {
 			>
 				<div className="relative">
 					<motion.h1
-						className="text-2xl md:text-3xl font-bold
-							cursor-pointer select-none"
-					>
+						className="text-2xl md:text-3xl font-bold select-none"
+						initial={{ opacity: 0, x: -50 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.6, ease: 'easeOut' }}
+						viewport={{ amount: 1, once: true }}
+						>
 						About Me
 					</motion.h1>
 				</div>
-				<p
+				<motion.p
 					className={`mt-10 text-justify text-lg
 						text-gray-700 leading-relaxing dark:text-gray-200`}
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, ease: 'easeOut' }}
+						viewport={{ amount: 1, once: true }}
 				>
 					Hi, my name is <strong>Ismail Assil</strong>, an aspiring{' '}
 					<strong>
@@ -75,7 +82,7 @@ function AboutMe() {
 						color="#8267e4"
 						className="inline-block rotate-12"
 					/>
-				</p>
+				</motion.p>
 			</motion.article>
 		</AnimatePresence>
 	);

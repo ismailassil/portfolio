@@ -24,8 +24,8 @@ const InteractiveDots = () => {
 			className="fixed inset-0 pointer-events-none z-[-10] dark:bg-[#121212]"
 			style={
 				{
-					'--mouse-x': '50%',
-					'--mouse-y': '50%',
+					'--mouse-x': '0%',
+					'--mouse-y': '0%',
 				} as React.CSSProperties
 			}
 		>
@@ -45,9 +45,9 @@ const InteractiveDots = () => {
 				style={{
 					backgroundSize: '20px 20px',
 					backgroundImage:
-						'radial-gradient(#3b82f6 0.5px, transparent 1px)',
+						'radial-gradient(#3b82f6 0.8px, transparent 1px)',
 					maskImage:
-						'radial-gradient(circle 150px at var(--mouse-x) var(--mouse-y), black 80%, transparent 100%)',
+						'radial-gradient(circle 160px at var(--mouse-x) var(--mouse-y), black 80%, transparent 100%)',
 					WebkitMaskImage:
 						'radial-gradient(circle 150px at var(--mouse-x) var(--mouse-y), black 80%, transparent 100%)',
 					transition: 'mask-position 0.1s, -webkit-mask-position 0.1s',

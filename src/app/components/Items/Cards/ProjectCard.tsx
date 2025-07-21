@@ -4,13 +4,14 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 type ProjectCardProps = {
+	i: number;
 	title: string;
 	label: string;
 	img: string;
 	link: string;
 };
 
-function ProjectCard({ title, label, img, link }: ProjectCardProps) {
+function ProjectCard({ i, title, label, img, link }: ProjectCardProps) {
 	const [isHover, setIsHover] = useState(false);
 
 	return (
@@ -18,25 +19,34 @@ function ProjectCard({ title, label, img, link }: ProjectCardProps) {
 			<motion.div
 				onMouseEnter={() => setIsHover(true)}
 				onMouseLeave={() => setIsHover(false)}
+				initial={{ opacity: 0, y: 60, scale: 0.9 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					transition: {
+						duration: 0.6,
+						delay: i * 0.1, // Add stagger if this is in a loop
+						ease: 'easeOut',
+					},
+				}}
+				viewport={{ amount: 0.2, once: true }}
 				whileHover={{
 					scale: 1.01,
 					rotate: 0.5,
+					y: -4, // Subtle lift effect
+					transition: { duration: 0.3, ease: 'easeOut' },
 				}}
 				whileTap={{
 					scale: 0.98,
 					rotate: -2,
-				}}
-				transition={{
-					duration: 0.3,
-					type: 'spring',
-					stiffness: 320,
-					damping: 20,
+					transition: { duration: 0.1 },
 				}}
 				className="w-full h-full
-					select-none overflow-hidden cursor-pointer
-					bg-gray-50 ring-gray-200 rounded-xl
-					ring-2 hover:ring-[#746e9c7a]
-					flex flex-col gap-2 p-4 dark:bg-dark dark:ring-white/10"
+						select-none overflow-hidden cursor-pointer
+						bg-gray-50 ring-gray-200 rounded-xl
+						ring-2 hover:ring-[#746e9c7a]
+						flex flex-col gap-2 p-4 dark:bg-dark dark:ring-white/10"
 				onClick={() => window.open(link)}
 			>
 				<div

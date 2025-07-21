@@ -1,4 +1,13 @@
-import { Code, Folder, Notepad, User } from '@phosphor-icons/react';
+import {
+	At,
+	Code,
+	DiscordLogo,
+	Folder,
+	GithubLogo,
+	LinkedinLogo,
+	Notepad,
+	User,
+} from '@phosphor-icons/react';
 import ThemeSwitcher from './ThemeSwitcher';
 import Image from 'next/image';
 import Button from './Items/About';
@@ -52,7 +61,7 @@ function Main() {
 						Hi, I’m
 					</motion.p>
 					<motion.h1
-						className={`${sora.className} text-7xl font-black text-center`}
+						className={`${sora.className} text-7xl font-black text-center cursor-pointer`}
 					>
 						{characters.map((ch, i) => (
 							<motion.span
@@ -99,6 +108,46 @@ function Main() {
 					</motion.div>
 				))}
 			</section>
+			<motion.section
+				className="flex gap-4"
+				initial={{ opacity: 0, y: 30, scale: 0.5 }}
+				animate={{ opacity: 1, y: 0, scale: 1 }}
+				transition={{
+					delay: 0.2,
+					duration: 0.3,
+					damping: 10,
+					type: 'spring',
+				}}
+			>
+				<At
+					size={28}
+					className="cursor-pointer hover:scale-110 duration-600 transition-all hover:fill-blue-700"
+					onClick={() =>
+						window.open(
+							'mailto:ismailassil@duck.com?subject=Hello&body=How%20are%20you%3F',
+						)
+					}
+				/>
+				<GithubLogo
+					size={28}
+					className="cursor-pointer hover:scale-110 duration-600 transition-all hover:fill-blue-700"
+					onClick={() => window.open('https://github.com/ismailassil')}
+				/>
+				<LinkedinLogo
+					size={28}
+					className="cursor-pointer hover:scale-110 duration-600 transition-all hover:fill-blue-700"
+					onClick={() =>
+						window.open('https://linkedin.com/in/ismail-assil')
+					}
+				/>
+				<DiscordLogo
+					size={28}
+					className="cursor-pointer hover:scale-110 duration-600 transition-all hover:fill-blue-700"
+					onClick={() =>
+						window.open('https://discord.com/users/musablade')
+					}
+				/>
+			</motion.section>
 			<Image
 				src="/scrollDown.gif"
 				width={50}

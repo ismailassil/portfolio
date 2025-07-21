@@ -89,22 +89,6 @@ function NavBar() {
 						style={setStyle('/')}
 					/>
 				</NavItem>
-				{/* <NavItem isTooltip={isTooltip} label="Pojects">
-					<FolderNotchOpen
-						size={25}
-						color={setColor("/projects")}
-						weight={setWeight("/projects")}
-						style={setStyle("/projects")}
-					/>
-				</NavItem>
-				<NavItem isTooltip={isTooltip} label="Blogs">
-					<Notepad
-						size={25}
-						color={setColor("/blogs")}
-						weight={setWeight("/blogs")}
-						style={setStyle("/blogs")}
-					/>
-				</NavItem> */}
 				<NavItem isTooltip={isTooltip} label="Links">
 					<ArrowUpRight
 						ref={arrowRef}

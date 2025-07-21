@@ -9,10 +9,12 @@ function Footer() {
 					width={100}
 					height={40}
 					alt="Signature"
-					className='dark:invert-90'
+					className="dark:invert-90"
 				/>
 			</div>
-			<p className='dark:text-gray-300'>{new Date().getFullYear()} &#169; Ismail Assil</p>
+			<p className="dark:text-gray-300">
+				{new Date().getFullYear()} &#169; Ismail Assil
+			</p>
 		</footer>
 	);
 }

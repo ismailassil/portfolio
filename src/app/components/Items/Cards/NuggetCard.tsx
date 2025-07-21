@@ -4,14 +4,14 @@ import More from './More';
 import { ArrowUp } from '@phosphor-icons/react';
 
 type NuggetProps = {
+	i: number;
 	title: string;
 	description: string;
 	subtitle: string;
-
 	skills: { title: string }[];
 };
 
-function NuggetCard({ title, description, subtitle, skills }: NuggetProps) {
+function NuggetCard({ i, title, description, subtitle, skills }: NuggetProps) {
 	const [entered, setEntered] = useState(false);
 	const [show, setShow] = useState(false);
 
@@ -20,14 +20,36 @@ function NuggetCard({ title, description, subtitle, skills }: NuggetProps) {
 			<motion.div
 				onMouseEnter={() => setEntered(true)}
 				onMouseLeave={() => setEntered(false)}
-				whileHover={{ scale: 1.01 }}
-				transition={{ duration: 0.4 }}
-				whileTap={{ scale: 0.99 }}
+				initial={{ opacity: 0, y: 40, scale: 0.95 }}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+				}}
+				transition={{
+					duration: 0.5,
+					delay: i * 0.08,
+					ease: [0.25, 0.46, 0.45, 0.94],
+				}}
+				viewport={{ amount: 0.2, once: true }}
+				whileHover={{
+					scale: 1.02,
+					y: -2,
+					transition: {
+						duration: 0.1,
+						ease: 'easeInOut',
+					},
+				}}
+				whileTap={{
+					scale: 0.98,
+					y: 0,
+					transition: { duration: 0.1 },
+				}}
 				className="flex justify-between items-center ring-1 hover:ring-2
-							ring-gray-200 px-4 py-4 rounded-md cursor-pointer bg-gray-50
-							hover:ring-red-300 duration-200 dark:bg-black/20
-							dark:text-gray-200 dark:ring-1 dark:ring-white/10 
-							select-none"
+					ring-gray-200 px-4 py-4 rounded-md cursor-pointer bg-gray-50
+					hover:ring-red-300 duration-200 dark:bg-black/20
+					dark:text-gray-200 dark:ring-1 dark:ring-white/10 
+					select-none"
 				onClick={() => {
 					setShow(!show);
 				}}
@@ -89,8 +111,7 @@ function NuggetCard({ title, description, subtitle, skills }: NuggetProps) {
 										key={index}
 										className="flex items-start ring-1 ring-indigo-200 bg-indigo-100
 											hover:text-white hover:bg-indigo-500 px-2 rounded-sm select-none
-											duration-300 transition-all dark:text-dark dark:bg-white/90
-														"
+											duration-300 transition-all dark:ring-white/40 dark:bg-white/15"
 									>
 										{skill.title}
 									</li>

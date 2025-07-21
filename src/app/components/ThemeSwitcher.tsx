@@ -1,6 +1,7 @@
-import { Moon, SunDim } from '@phosphor-icons/react';
+import { SunDim } from '@phosphor-icons/react';
 import { AnimatePresence, motion } from 'motion/react'; // adjust path as needed
 import { useTheme } from '../context/ThemeContext';
+import { Moon } from '@phosphor-icons/react/dist/ssr';
 
 function ThemeSwitcher() {
 	const { isDark, toggleTheme } = useTheme();

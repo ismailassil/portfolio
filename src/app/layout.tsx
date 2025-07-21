@@ -44,9 +44,9 @@ export default function RootLayout({
 					rel="stylesheet"
 					href="https://cdn.jsdelivr.net/gh/dheereshagrwal/coloured-icons@master/src/app/ci.min.css"
 				/>
-				<link rel="icon" href="/favicon.svg" />
+				<link rel="icon" href="/logo.png" />
 			</head>
-			<body className={`${dmSans.className} antialiased`}>
+			<body className={`${dmSans.className} antialiased scroll-smooth`}>
 				<ThemeProvider>
 					<InteractiveDots />
 					{children}
