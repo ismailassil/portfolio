@@ -8,7 +8,7 @@ const Title = ({ text }: { text: string }) => {
 			initial={{ opacity: 0, x: -50 }}
 			whileInView={{ opacity: 1, x: 0 }}
 			transition={{ duration: 0.6, ease: 'easeOut' }}
-			viewport={{ amount: 1, once: true }}
+			viewport={{ amount: 0.5, once: true }}
 		>
 			{text}
 		</motion.h1>

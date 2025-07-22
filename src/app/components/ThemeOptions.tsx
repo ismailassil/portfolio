@@ -11,14 +11,14 @@ const ThemeOptions = ({ show }: { show: boolean }) => {
 			{show && (
 				<motion.div
 					className="flex gap-1 rounded-full bg-white 
-						dark:bg-black ring-2 absolute left-1/2 -translate-1/2 top-1/2
+						dark:bg-black ring-2 absolute left-0 md:left-1/2 -translate-1/2 top-1/2
 						ring-gray-400/25 px-1 py-1 *:cursor-pointer z-10 
 						*:dark:fill-gray-300 *:dark:hover:bg-gray-700
 						*:hover:bg-gray-200/50 *:rounded-full *:p-1 *:fill-gray-700
 						*:duration-300 *:hover:scale-102"
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
-					exit={{ opacity: 0, scale: 0.5 }}
+					exit={{ opacity: 0, scale: 0.8 }}
 					transition={{
 						type: 'spring',
 						duration: 0.5,

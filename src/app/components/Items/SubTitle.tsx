@@ -8,7 +8,7 @@ const SubTitle = ({ text, link }: { text: string; link: string }) => {
 			transition={{ duration: 0.6, ease: 'easeOut' }}
 			initial={{ opacity: 0, x: 50 }}
 			whileInView={{ opacity: 1, x: 0 }}
-			viewport={{ amount: 1, once: true }}
+			viewport={{ amount: 0.5, once: true }}
 			className="text-md flex cursor-pointer flex-nowrap text-sm md:text-base
 							items-center gap-2 text-gray-400 select-none hover:underline"
 			onClick={() => window.open(link)}
