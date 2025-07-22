@@ -1,5 +1,5 @@
 import spaceGrotesk from '@/app/fonts/spaceGrotesk';
-import { ArrowUpRight } from '@phosphor-icons/react';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { AnimatePresence } from 'motion/react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -46,17 +46,6 @@ function BlogCard({ i, title, img, link }: BlogCardProps) {
 					},
 				}}
 				viewport={{ amount: 0.2, once: true }}
-				// whileHover={{
-				// 	scale: 1.01,
-				// 	rotate: 0.5,
-				// 	y: -4, // Subtle lift effect
-				// 	transition: { duration: 0.3, ease: 'easeOut' },
-				// }}
-				// whileTap={{
-				// 	scale: 0.98,
-				// 	rotate: -2,
-				// 	transition: { duration: 0.1 },
-				// }}
 				className="w-full select-none overflow-hidden
 								cursor-pointer bg-gray-50 ring-gray-200
 								hover:ring-[#9c7a6e43] hover:shadow-md
@@ -99,7 +88,7 @@ function BlogCard({ i, title, img, link }: BlogCardProps) {
 							exit={{ opacity: 0, y: 4 }}
 							transition={{ duration: 0.15 }}
 						>
-							<ArrowUpRight
+							<ArrowUpRightIcon
 								size={20}
 								weight={isHover ? 'duotone' : 'regular'}
 								className={`${isHover ? 'fill-[#008080] dark:fill-white' : 'fill-black dark:fill-gray-400'}`}

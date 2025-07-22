@@ -1,9 +1,10 @@
-import { Barbell, Laptop, PaintBrush } from '@phosphor-icons/react';
+import { BarbellIcon, LaptopIcon, PaintBrushIcon } from '@phosphor-icons/react';
 import { AnimatePresence } from 'motion/react';
 import { motion } from 'motion/react';
-import spaceGrotesk from '../fonts/spaceGrotesk';
-import playwrite from '../fonts/playwrite';
-import spaceMono from '../fonts/spaceMono';
+import spaceGrotesk from '../../fonts/spaceGrotesk';
+import playwrite from '../../fonts/playwrite';
+import spaceMono from '../../fonts/spaceMono';
+import Title from '../Items/Title';
 
 function AboutMe() {
 	return (
@@ -12,31 +13,21 @@ function AboutMe() {
 				className="mt-20 pt-20 relative dark:text-gray-200"
 				id="aboutme"
 			>
-				<div className="relative">
-					<motion.h1
-						className="text-2xl md:text-3xl font-bold select-none"
-						initial={{ opacity: 0, x: -50 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.6, ease: 'easeOut' }}
-						viewport={{ amount: 1, once: true }}
-						>
-						About Me
-					</motion.h1>
-				</div>
+				<Title text="About Me" />
 				<motion.p
 					className={`mt-10 text-justify text-lg
 						text-gray-700 leading-relaxing dark:text-gray-200`}
-						initial={{ opacity: 0, y: 50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, ease: 'easeOut' }}
-						viewport={{ amount: 1, once: true }}
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, ease: 'easeOut' }}
+					viewport={{ amount: 1, once: true }}
 				>
 					Hi, my name is <strong>Ismail Assil</strong>, an aspiring{' '}
 					<strong>
 						Software Engineering Student at{' '}
 						<span className={spaceGrotesk.className}>1337</span>
 					</strong>{' '}
-					<Laptop
+					<LaptopIcon
 						size={24}
 						color="#529f50"
 						weight="duotone"
@@ -44,7 +35,7 @@ function AboutMe() {
 					/>{' '}
 					who wishes to participate in creating greener and more meaningful
 					digital environments. When it comes to using design{' '}
-					<PaintBrush
+					<PaintBrushIcon
 						size={24}
 						color="#4599b5"
 						weight="duotone"
@@ -76,7 +67,7 @@ function AboutMe() {
 					. Learning new things, especially those that are nothing less
 					than challenging for my cognitive abilities and that are
 					beneficial to my professional development.{' '}
-					<Barbell
+					<BarbellIcon
 						size={24}
 						weight="duotone"
 						color="#8267e4"

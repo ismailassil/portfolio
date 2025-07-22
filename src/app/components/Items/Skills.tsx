@@ -1,4 +1,4 @@
-import { Code } from "@phosphor-icons/react";
+import { CodeIcon } from "@phosphor-icons/react";
 import Tooltip from "./Tooltip";
 
 function Skills({ style }: { style: string }) {
@@ -8,8 +8,8 @@ function Skills({ style }: { style: string }) {
 			onClick={() => (window.location.href = "#SkillSet")}
 		>
 			<Tooltip label="Skills" />
-			<Code size={32} className="block group-hover:hidden" />
-			<Code
+			<CodeIcon size={32} className="block group-hover:hidden" />
+			<CodeIcon
 				size={32}
 				className="hidden group-hover:block"
 				weight="duotone"

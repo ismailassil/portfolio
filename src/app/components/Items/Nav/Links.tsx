@@ -1,9 +1,9 @@
 import {
-	ArrowLineUpRight,
-	At,
-	DiscordLogo,
-	GithubLogo,
-	LinkedinLogo,
+	ArrowLineUpRightIcon,
+	AtIcon,
+	DiscordLogoIcon,
+	GithubLogoIcon,
+	LinkedinLogoIcon,
 } from '@phosphor-icons/react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Dispatch, RefObject, SetStateAction } from 'react';
@@ -45,9 +45,9 @@ function Links({ links, linksRef, setLinks }: LinksProps) {
 						onClick={handleEmail}
 					>
 						<div className="flex gap-2 items-center">
-							<At size={24} color="white" /> Email{' '}
+							<AtIcon size={24} color="white" /> Email{' '}
 						</div>
-						<ArrowLineUpRight
+						<ArrowLineUpRightIcon
 							size={20}
 							className="group-hover:block hidden"
 						/>
@@ -57,9 +57,9 @@ function Links({ links, linksRef, setLinks }: LinksProps) {
 						onClick={() => redirect('https://github.com/ismailassil/')}
 					>
 						<div className="flex gap-2 items-center">
-							<GithubLogo size={24} color="white" /> Github{' '}
+							<GithubLogoIcon size={24} color="white" /> Github{' '}
 						</div>
-						<ArrowLineUpRight
+						<ArrowLineUpRightIcon
 							size={20}
 							className="group-hover:block hidden"
 						/>
@@ -71,9 +71,9 @@ function Links({ links, linksRef, setLinks }: LinksProps) {
 						}
 					>
 						<div className="flex gap-2 items-center">
-							<LinkedinLogo size={24} color="white" /> Linkedin{' '}
+							<LinkedinLogoIcon size={24} color="white" /> Linkedin{' '}
 						</div>
-						<ArrowLineUpRight
+						<ArrowLineUpRightIcon
 							size={20}
 							className="group-hover:block hidden"
 						/>
@@ -85,9 +85,9 @@ function Links({ links, linksRef, setLinks }: LinksProps) {
 						}
 					>
 						<div className="flex gap-2 items-center">
-							<DiscordLogo size={24} color="white" /> Discord{' '}
+							<DiscordLogoIcon size={24} color="white" /> Discord{' '}
 						</div>
-						<ArrowLineUpRight
+						<ArrowLineUpRightIcon
 							size={20}
 							className="group-hover:block hidden"
 						/>

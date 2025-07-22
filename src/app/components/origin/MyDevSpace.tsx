@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'motion/react';
 import { motion } from 'motion/react';
-import techIcons from '../info/Tech';
+import techIcons from '../../info/Tech';
+import Title from './../Items/Title';
 
 function MyDevSpace() {
 	return (
@@ -9,18 +10,7 @@ function MyDevSpace() {
 				className="mt-20 relative dark:text-gray-200"
 				id="skills"
 			>
-				<div className="relative">
-					<motion.h1
-						className="relative text-2xl md:text-3xl font-bold 
-							select-none"
-						initial={{ opacity: 0, x: -50 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.6, ease: 'easeOut' }}
-						viewport={{ amount: 1, once: true }}
-					>
-						My DevSpace
-					</motion.h1>
-				</div>
+				<Title text="My DevSpace" />
 				<AnimatePresence>
 					<motion.section
 						className={`mt-10 text-justify text-gray-700 leading-5 grid 

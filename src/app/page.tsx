@@ -1,11 +1,11 @@
 'use client';
-import NuggetsOfKnowHow from './components/NuggetsOfKnowHow';
-import MyDevSpace from './components/MyDevSpace';
-import AboutMe from './components/AboutMe';
-import Main from './components/Main';
-import InkSpace from './components/InkSpace';
-import LatestProjects from './components/LatestProjects';
-import Footer from './components/Footer';
+import NuggetsOfKnowHow from './components/origin/NuggetsOfKnowHow';
+import MyDevSpace from './components/origin/MyDevSpace';
+import AboutMe from './components/origin/AboutMe';
+import Main from './components/origin/Main';
+import InkSpace from './components/origin/InkSpace';
+import LatestProjects from './components/origin/LatestProjects';
+import Footer from './components/origin/Footer';
 
 export default function Home() {
 	return (

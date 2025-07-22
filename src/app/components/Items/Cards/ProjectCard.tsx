@@ -1,4 +1,4 @@
-import { ArrowUpRight } from '@phosphor-icons/react';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -74,7 +74,7 @@ function ProjectCard({ i, title, label, img, link }: ProjectCardProps) {
 								exit={{ opacity: 0, y: 4 }}
 								transition={{ duration: 0.15 }}
 							>
-								<ArrowUpRight
+								<ArrowUpRightIcon
 									size={20}
 									weight={isHover ? 'duotone' : 'regular'}
 								/>

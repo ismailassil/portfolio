@@ -1,5 +1,4 @@
 'use client';
-
 import './globals.css';
 import dmSans from './fonts/geistSans';
 import { useEffect, useState } from 'react';
@@ -7,8 +6,8 @@ import NavBar from './components/NavBar';
 import { AnimatePresence, motion } from 'motion/react';
 import InteractiveDots from './components/InteractiveDots';
 import { ThemeProvider } from './context/ThemeContext';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function RootLayout({
 	children,

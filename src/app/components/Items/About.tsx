@@ -24,7 +24,7 @@ function Button({ tooltip, href, Icon }: ButtonsProps) {
 				}}
 				whileTap={{ scale: 0.95 }}
 				className={`relative group w-fit cursor-pointer ring-2 px-7 py-3 
-					rounded-sm duration-200 backdrop-blur-xs
+					rounded-sm duration-200 bg-white/80 dark:bg-black/30
 					${isHover && 'ring-orange-400 shadow-md z-10 hover:fill-oklch-light'}`}
 				onClick={() => (window.location.href = href)}
 			>

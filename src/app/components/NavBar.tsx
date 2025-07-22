@@ -1,14 +1,12 @@
 'use client';
 
 import {
-	ArrowUpRight,
-	Circle,
-	DotsThreeVertical,
-	Moon,
-	Sun,
-	// Notepad,
+	ArrowUpRightIcon,
+	CircleIcon,
+	DotsThreeVerticalIcon,
+	MoonIcon,
+	SunIcon,
 } from '@phosphor-icons/react';
-// import { FolderNotchOpen } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useRef, useState } from 'react';
 import NavItem from './Items/Nav/NavItem';
 import { motion } from 'framer-motion';
@@ -29,7 +27,7 @@ function NavBar() {
 	const linksRef = useRef<HTMLDivElement>(null);
 	const arrowRef = useRef<SVGSVGElement>(null);
 
-	const { isDark, toggleTheme } = useTheme();
+	const { isDark, toggleDark, toggleLight } = useTheme();
 
 	useEffect(() => {
 		function handleClick(e: MouseEvent) {
@@ -82,7 +80,7 @@ function NavBar() {
 					*:transition-all ring-2 ring-black/3 dark:ring-white/5 dark:shadow-sm dark:shadow-white/10"
 			>
 				<NavItem isTooltip={isTooltip} label="Home">
-					<Circle
+					<CircleIcon
 						size={25}
 						color={setColor('/')}
 						weight={setWeight('/')}
@@ -90,7 +88,7 @@ function NavBar() {
 					/>
 				</NavItem>
 				<NavItem isTooltip={isTooltip} label="Links">
-					<ArrowUpRight
+					<ArrowUpRightIcon
 						ref={arrowRef}
 						size={25}
 						color={'white'}
@@ -102,24 +100,24 @@ function NavBar() {
 					label={`${isDark ? 'Light Theme' : 'Dark Theme'}`}
 				>
 					{isDark ? (
-						<Sun
+						<SunIcon
 							size={25}
 							color={setColor('/theme')}
 							style={setStyle('/theme')}
 							className="animate-spinner-navbar"
-							onClick={toggleTheme}
+							onClick={toggleLight}
 						/>
 					) : (
-						<Moon
+						<MoonIcon
 							size={25}
 							color={setColor('/theme')}
 							style={setStyle('/theme')}
-							onClick={toggleTheme}
+							onClick={toggleDark}
 						/>
 					)}
 				</NavItem>
 				<NavItem isTooltip={isTooltip} label="Options">
-					<DotsThreeVertical
+					<DotsThreeVerticalIcon
 						ref={dotRef}
 						size={25}
 						color={'white'}
