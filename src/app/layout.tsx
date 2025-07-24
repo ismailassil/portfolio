@@ -1,13 +1,13 @@
 'use client';
 import './globals.css';
-import dmSans from './fonts/geistSans';
+import dmSans from './fonts/dmSans';
 import { useEffect, useState } from 'react';
-import NavBar from './components/NavBar';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 import InteractiveDots from './components/InteractiveDots';
 import { ThemeProvider } from './context/ThemeContext';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import NavBarView from './components/Items/NavBar';
 
 export default function RootLayout({
 	children,
@@ -52,28 +52,7 @@ export default function RootLayout({
 					<SpeedInsights />
 					<Analytics />
 					<AnimatePresence initial={false} mode="wait">
-						{showNav ? (
-							<motion.div
-								key="nav-wrapper"
-								initial={{
-									opacity: 0,
-									y: 100,
-									scale: 0.5,
-									rotate: 15,
-								}}
-								animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
-								exit={{
-									opacity: 0,
-									y: 100,
-									scale: 0.5,
-									rotate: 15,
-								}}
-								transition={{ type: 'spring', duration: 0.5 }}
-								className="fixed bottom-5 left-1/2 -translate-x-1/2"
-							>
-								<NavBar key="nav" />
-							</motion.div>
-						) : null}
+						{showNav ? <NavBarView /> : null}
 					</AnimatePresence>
 				</ThemeProvider>
 			</body>

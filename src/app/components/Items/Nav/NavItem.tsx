@@ -11,7 +11,7 @@ function NavItem({
 		<div
 			className="group relative flex items-center justify-center"
 			onClick={() => {
-				if (label === 'Home') window.location.href = '/';
+				if (label === 'Home') window.location.href = '#main';
 			}}
 		>
 			{children}

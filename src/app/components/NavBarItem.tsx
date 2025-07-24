@@ -77,7 +77,8 @@ function NavBar() {
 					bg-black/65 *:cursor-pointer *:p-2
 					flex px-1 py-1 duration-400 transition-all
 					*:hover:bg-white/10 *:hover:scale-110 *:duration-400
-					*:transition-all ring-2 ring-black/3 dark:ring-white/5 dark:shadow-sm dark:shadow-white/10"
+					*:transition-all ring-2 ring-black/3 dark:ring-white/5 
+					dark:shadow-sm dark:shadow-white/10"
 			>
 				<NavItem isTooltip={isTooltip} label="Home">
 					<CircleIcon
