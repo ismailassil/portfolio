@@ -11,6 +11,7 @@ const ScrollGif = () => {
 			className="absolute bottom-10 cursor-pointer dark:invert-100"
 			unoptimized
 			onClick={() => (window.location.href = '#aboutme')}
+			priority
 		/>
 	);
 };

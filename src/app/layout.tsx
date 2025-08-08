@@ -1,13 +1,15 @@
-'use client';
-import './globals.css';
-import dmSans from './fonts/dmSans';
-import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'motion/react';
-import InteractiveDots from './components/InteractiveDots';
-import { ThemeProvider } from './context/ThemeContext';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
-import NavBarView from './components/Items/NavBar';
+"use client";
+import "./globals.css";
+import dmSans from "./fonts/dmSans";
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "motion/react";
+import InteractiveDots from "./components/InteractiveDots";
+import { ThemeProvider } from "./context/ThemeContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
+import NavBarView from "./components/Items/NavBar";
+import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import 'lenis/dist/lenis.css'
 
 export default function RootLayout({
 	children,
@@ -25,15 +27,15 @@ export default function RootLayout({
 			}
 		}
 
-		document.addEventListener('scroll', handleScrollY);
+		document.addEventListener("scroll", handleScrollY);
 
 		return () => {
-			document.removeEventListener('scroll', handleScrollY);
+			document.removeEventListener("scroll", handleScrollY);
 		};
 	});
 
 	useEffect(() => {
-		document.title = 'Portfolio | iassil';
+		document.title = "Portfolio | iassil";
 	});
 
 	return (
@@ -46,15 +48,17 @@ export default function RootLayout({
 				<link rel="icon" href="/logo.png" />
 			</head>
 			<body className={`${dmSans.className} antialiased scroll-smooth`}>
-				<ThemeProvider>
-					<InteractiveDots />
-					{children}
-					<SpeedInsights />
-					<Analytics />
-					<AnimatePresence initial={false} mode="wait">
-						{showNav ? <NavBarView /> : null}
-					</AnimatePresence>
-				</ThemeProvider>
+				<SmoothScrollProvider>
+					<ThemeProvider>
+						<InteractiveDots />
+						{children}
+						<SpeedInsights />
+						<Analytics />
+						<AnimatePresence initial={false} mode="wait">
+							{showNav ? <NavBarView /> : null}
+						</AnimatePresence>
+					</ThemeProvider>
+				</SmoothScrollProvider>
 			</body>
 		</html>
 	);
