@@ -1,3 +1,8 @@
+const docuAiDescription = `AI-powered document processing and analysis tool. Leverages artificial
+	intelligence to extract, analyze, and interact with document content.`;
+
+const docuAiImg = `/projects/DocuAI.jpg`;
+
 const ircDescription = `An Internet Relay Chat Server, implementing
 user authentication, channels, and message
 broadcasting using socket programming`;
@@ -23,6 +28,8 @@ and basic player mechanics—offering hands-on experience with low-level graphic
 const cubImg = `/projects/cub.png`;
 
 export {
+	docuAiDescription,
+	docuAiImg,
 	ircDescription,
 	ircImg,
 	minishellDescription,

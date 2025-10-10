@@ -1,37 +1,45 @@
 import {
-	cubDescription,
-	cubImg,
+	// cubDescription,
+	// cubImg,
+	docuAiDescription,
+	docuAiImg,
 	inceptionDescription,
 	inceptionImg,
 	ircDescription,
 	ircImg,
 	minishellDescription,
 	minishellImg,
-} from '../info/Descriptions';
+} from "../info/Descriptions";
 
 export const projects = [
 	{
-		title: 'IRC Server',
+		title: "DocuAI",
+		label: docuAiDescription,
+		img: docuAiImg,
+		link: "https://github.com/ismailassil/docu-ai",
+	},
+	{
+		title: "IRC Server",
 		label: ircDescription,
 		img: ircImg,
-		link: 'https://github.com/ismailassil/ft_irc',
+		link: "https://github.com/ismailassil/ft_irc",
 	},
 	{
-		title: 'Inception',
+		title: "Inception",
 		label: inceptionDescription,
 		img: inceptionImg,
-		link: 'https://github.com/ismailassil/inception',
+		link: "https://github.com/ismailassil/inception",
 	},
 	{
-		title: 'Minishell',
+		title: "Minishell",
 		label: minishellDescription,
 		img: minishellImg,
-		link: 'https://github.com/ismailassil/minishell',
+		link: "https://github.com/ismailassil/minishell",
 	},
-	{
-		title: 'cub3D',
-		label: cubDescription,
-		img: cubImg,
-		link: 'https://github.com/ismailassil/cub3d',
-	},
+	// {
+	// 	title: "cub3D",
+	// 	label: cubDescription,
+	// 	img: cubImg,
+	// 	link: "https://github.com/ismailassil/cub3d",
+	// },
 ];

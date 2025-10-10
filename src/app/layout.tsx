@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import NavBarView from "./components/Items/NavBar";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
-import 'lenis/dist/lenis.css'
+import "lenis/dist/lenis.css";
 
 export default function RootLayout({
 	children,
@@ -41,10 +41,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="dark">
 			<head>
-				<link
-					rel="stylesheet"
-					href="https://cdn.jsdelivr.net/gh/dheereshagrwal/coloured-icons@master/src/app/ci.min.css"
-				/>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dheereshag/coloured-icons@master/app/ci.min.css" />
 				<link rel="icon" href="/logo.png" />
 			</head>
 			<body className={`${dmSans.className} antialiased scroll-smooth`}>
