@@ -16,7 +16,7 @@ export const projects = [
 		title: "DocuAI",
 		label: docuAiDescription,
 		img: docuAiImg,
-		link: "https://github.com/ismailassil/docu-ai",
+		link: "https://github.com/ismailassil/docuai",
 	},
 	{
 		title: "IRC Server",
