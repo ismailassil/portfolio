@@ -1,6 +1,4 @@
-// components/SmoothScrollProvider.tsx
 "use client";
-
 import Lenis from "lenis";
 import { useEffect } from "react";
 
@@ -10,20 +8,30 @@ export default function SmoothScrollProvider({
 	children: React.ReactNode;
 }) {
 	useEffect(() => {
-		const lenis = new Lenis({
-			duration: 1.2,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-			// smooth: true,
-		});
+		const scrollerElement = document.querySelector(
+			".baron__scroller"
+		) as HTMLElement;
 
-		const raf = (time: number) => {
-			lenis.raf(time);
+		if (scrollerElement) {
+			const lenis = new Lenis({
+				wrapper: scrollerElement,
+				content: scrollerElement.firstChild as HTMLElement,
+				lerp: 0.1,
+				duration: 1.2,
+				smoothWheel: true,
+			});
+
+			function raf(time: number) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+
 			requestAnimationFrame(raf);
-		};
 
-		requestAnimationFrame(raf);
-
-		return () => lenis.destroy();
+			return () => {
+				lenis.destroy();
+			};
+		}
 	}, []);
 
 	return <>{children}</>;

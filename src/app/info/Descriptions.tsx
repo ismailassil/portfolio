@@ -3,6 +3,10 @@ const docuAiDescription = `AI-powered document processing and analysis tool. Lev
 
 const docuAiImg = `/projects/DocuAI.jpg`;
 
+const rallyuDescription = ` A modern, web-based version of the classic Pong game with real-time multiplayer, responsive controls, and integration with user profiles and match history.`;
+
+const rallyuImg = `/projects/rallyu.jpg`;
+
 const ircDescription = `An Internet Relay Chat Server, implementing
 user authentication, channels, and message
 broadcasting using socket programming`;
@@ -21,21 +25,21 @@ under strict guidelines to simulate real-world deployment scenarios.`;
 
 const inceptionImg = `/projects/docker.jpeg`;
 
-const cubDescription = `A simple 3D game project inspired by classic first-person shooters, built using ray-casting techniques. 
-This project introduces core concepts in computer graphics and game development, such as rendering, texture mapping, 
-and basic player mechanics—offering hands-on experience with low-level graphics programming.`;
+const qradeDescription = `A web app that scans uploaded PDFs and extracts QR codes from every page automatically.`;
 
-const cubImg = `/projects/cub.png`;
+const qradeImg = `/projects/qrade.svg`;
 
 export {
 	docuAiDescription,
 	docuAiImg,
+	rallyuDescription,
+	rallyuImg,
 	ircDescription,
 	ircImg,
 	minishellDescription,
 	minishellImg,
 	inceptionDescription,
 	inceptionImg,
-	cubDescription,
-	cubImg,
+	qradeDescription,
+	qradeImg,
 };

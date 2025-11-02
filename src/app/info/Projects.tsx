@@ -1,6 +1,6 @@
 import {
-	// cubDescription,
-	// cubImg,
+	qradeDescription,
+	qradeImg,
 	docuAiDescription,
 	docuAiImg,
 	inceptionDescription,
@@ -9,6 +9,8 @@ import {
 	ircImg,
 	minishellDescription,
 	minishellImg,
+	rallyuDescription,
+	rallyuImg,
 } from "../info/Descriptions";
 
 export const projects = [
@@ -17,6 +19,18 @@ export const projects = [
 		label: docuAiDescription,
 		img: docuAiImg,
 		link: "https://github.com/ismailassil/docuai",
+	},
+	{
+		title: "Rallyu",
+		label: rallyuDescription,
+		img: rallyuImg,
+		link: "https://github.com/ismailassil/rallyu",
+	},
+	{
+		title: "Qrade",
+		label: qradeDescription,
+		img: qradeImg,
+		link: "https://github.com/ismailassil/qrade",
 	},
 	{
 		title: "IRC Server",
@@ -36,10 +50,4 @@ export const projects = [
 		img: minishellImg,
 		link: "https://github.com/ismailassil/minishell",
 	},
-	// {
-	// 	title: "cub3D",
-	// 	label: cubDescription,
-	// 	img: cubImg,
-	// 	link: "https://github.com/ismailassil/cub3d",
-	// },
 ];

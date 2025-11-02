@@ -1,7 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 html {
 	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
 }
 
 :root {
@@ -22,7 +26,7 @@ html {
 	--dot-color: #d8d8d8;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
 	--dot-color: #373737;
 }
 
@@ -44,22 +48,13 @@ body {
 	scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-	width: 10px;
-	position: absolute;
-}
-
-body::-webkit-scrollbar-thumb {
-	background: rgba(114, 113, 114, 0.24);
-}
-
 .cUnderline {
 	display: inline-block;
 	position: relative;
 }
 
 .cUnderline::after {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	transform: scaleX(0);
@@ -82,7 +77,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .ccUnderline::after {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	transform: scaleX(0);
@@ -105,7 +100,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mUnderline::after {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	transform: scaleX(0);
@@ -130,12 +125,52 @@ body::-webkit-scrollbar-thumb {
 	animation: spin 40s linear infinite;
 }
 
-.hide-scroll {
+/*********** Baron scrollbar *************/
+.baron {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+}
+
+.baron__scroller {
+	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }
 
-.hide-scroll::-webkit-scrollbar,
-.hide-scroll::-webkit-scrollbar-button {
+.baron__scroller::-webkit-scrollbar {
 	display: none;
+}
+
+.baron__content {
+	min-height: 100%;
+	width: 100%;
+}
+
+.baron__track {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 8px; /* Space from the right edge */
+	width: 6px;
+	z-index: 9999;
+	right: 3px;
+}
+
+.baron__bar {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	padding: 0 2px;
+	background: rgba(200, 162, 162, 0.501);
+	opacity: 0.5;
+	border-radius: 5px;
+	cursor: pointer;
+	@apply duration-300 transition-opacity
+}
+
+.baron__bar:hover {
+	opacity: 1;
 }

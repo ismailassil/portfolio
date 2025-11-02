@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL("https://miro.medium.com/**")],
   },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 export default nextConfig;

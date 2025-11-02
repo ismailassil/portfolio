@@ -59,7 +59,7 @@ function ProjectCard({ i, title, label, img, link }: ProjectCardProps) {
 						width={1000}
 						height={900}
 						alt="Descriptive Image"
-						className="object-cover w-full h-full"
+						className="object-cover w-full h-full max-h-48 min-h-48"
 						style={{ WebkitUserDrag: 'none' } as React.CSSProperties}
 					/>
 				</div>
