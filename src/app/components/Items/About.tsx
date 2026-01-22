@@ -10,6 +10,7 @@ type ButtonsProps = {
 
 function Button({ tooltip, href, Icon }: ButtonsProps) {
 	const [isHover, setIsHover] = useState(false);
+	console.log(href);
 
 	return (
 		<AnimatePresence mode="wait">
@@ -26,7 +27,11 @@ function Button({ tooltip, href, Icon }: ButtonsProps) {
 				className={`relative group w-fit cursor-pointer ring-2 px-7 py-3 
 					rounded-sm duration-200 bg-white/80 dark:bg-black/30
 					${isHover && 'ring-orange-400 shadow-md z-10 hover:fill-oklch-light'}`}
-				onClick={() => (window.location.href = href)}
+				onClick={() => {
+					document.getElementById(href)?.scrollIntoView({
+						behavior: 'smooth',
+					})
+				}}
 			>
 				<AnimatePresence mode="wait">
 					{isHover && <Tooltip label={tooltip} />}

@@ -1,8 +1,8 @@
-# 🚀 Personal Portfolio
+# Personal Portfolio
 
 A modern, responsive personal portfolio website built with Next.js, showcasing my projects, skills, and professional experience.
 
-## ✨ Features
+## Features
 
 - **Modern Design**: Clean and professional UI with smooth animations
 - **Responsive Layout**: Optimized for all devices (desktop, tablet, mobile)
@@ -14,13 +14,13 @@ A modern, responsive personal portfolio website built with Next.js, showcasing m
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/) - React framework for production
+- **Framework**: [Next.js 15](https://nextjs.org/) - React framework for production
 - **Language**: TypeScript - Type-safe development
 - **Styling**: Tailwind CSS - Utility-first CSS framework
 - **Font**: [Geist](https://vercel.com/font) - Modern font family by Vercel
 - **Deployment**: Vercel - Seamless deployment and hosting
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Prerequisites
 

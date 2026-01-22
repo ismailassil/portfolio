@@ -1,19 +1,7 @@
 @import "tailwindcss";
 
-html {
-	scroll-behavior: smooth;
-}
-
 ::-webkit-scrollbar {
 	width: 0px;
-}
-
-:root {
-	--dot-color: #e5e5e5;
-	--background: #ffffff;
-	--foreground: #171717;
-	--bg-color: rgba(74, 74, 74, 0.06);
-	--grid-size: 30px;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -23,7 +11,11 @@ html {
 }
 
 :root {
-	--dot-color: #d8d8d8;
+	--dot-color: #e5e5e5;
+	--background: #ffffff;
+	--foreground: #171717;
+	--bg-color: rgba(74, 74, 74, 0.06);
+	--grid-size: 30px;
 }
 
 [data-theme="dark"] {

@@ -3,22 +3,22 @@ import { CodeIcon, FolderIcon, NotepadIcon, UserIcon } from '@phosphor-icons/rea
 export const buttons = [
 	{
 		tooltip: 'About Me',
-		href: '#aboutme',
+		href: 'aboutme',
 		Icon: UserIcon,
 	},
 	{
 		tooltip: 'Skills',
-		href: '#skills',
+		href: 'skills',
 		Icon: CodeIcon,
 	},
 	{
 		tooltip: 'Projects',
-		href: '#projects',
+		href: 'projects',
 		Icon: FolderIcon,
 	},
 	{
 		tooltip: 'Blogs',
-		href: '#blogs',
+		href: 'blogs',
 		Icon: NotepadIcon,
 	},
 ];

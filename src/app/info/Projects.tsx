@@ -3,10 +3,12 @@ import {
 	qradeImg,
 	docuAiDescription,
 	docuAiImg,
+	keepSyncDescription,
+	keepSyncImg,
 	// inceptionDescription,
 	// inceptionImg,
-	ircDescription,
-	ircImg,
+	// ircDescription,
+	// ircImg,
 	// minishellDescription,
 	// minishellImg,
 	rallyuDescription,
@@ -14,6 +16,12 @@ import {
 } from "../info/Descriptions";
 
 export const projects = [
+	{
+		title: "KeepSync",
+		label: keepSyncDescription,
+		img: keepSyncImg,
+		link: "https://github.com/ismailassil/KeepSync",
+	},
 	{
 		title: "DocuAI",
 		label: docuAiDescription,
@@ -32,12 +40,12 @@ export const projects = [
 		img: qradeImg,
 		link: "https://github.com/ismailassil/qrade",
 	},
-	{
-		title: "IRC Server",
-		label: ircDescription,
-		img: ircImg,
-		link: "https://github.com/ismailassil/ft_irc",
-	},
+	// {
+	// 	title: "IRC Server",
+	// 	label: ircDescription,
+	// 	img: ircImg,
+	// 	link: "https://github.com/ismailassil/ft_irc",
+	// },
 	// {
 	// 	title: "Inception",
 	// 	label: inceptionDescription,

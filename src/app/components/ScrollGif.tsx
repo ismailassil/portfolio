@@ -10,7 +10,11 @@ const ScrollGif = () => {
 			alt="Scroll Down Animation"
 			className="absolute bottom-10 cursor-pointer dark:invert-100"
 			unoptimized
-			onClick={() => (window.location.href = '#aboutme')}
+			onClick={() => {
+				document.getElementById("aboutme")?.scrollIntoView({
+					behavior: 'smooth',
+				})
+			}}
 			priority
 		/>
 	);

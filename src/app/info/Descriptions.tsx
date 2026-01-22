@@ -1,3 +1,8 @@
+const keepSyncDescription = `KeepSync is a secure cloud storage platform that lets users upload,
+	sync, and access files across devices seamlessly, keeping data safe, organized, and always up to date. `;
+
+const keepSyncImg = `/projects/keepsync.png`;
+
 const docuAiDescription = `AI-powered document processing and analysis tool. Leverages artificial
 	intelligence to extract, analyze, and interact with document content.`;
 
@@ -30,6 +35,8 @@ const qradeDescription = `A web app that scans uploaded PDFs and extracts QR cod
 const qradeImg = `/projects/qrade.svg`;
 
 export {
+	keepSyncDescription,
+	keepSyncImg,
 	docuAiDescription,
 	docuAiImg,
 	rallyuDescription,
